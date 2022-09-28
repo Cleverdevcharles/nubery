@@ -175,11 +175,14 @@ export default function Home({ courses }) {
   )
 }
 
-export async function getServerSideProps() {
-  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/courses`)
-  return {
-    props: {
-      courses: [data],
-    },
+export async function getServerSideProps({query: p}) {
+  if(p.search == undefined){
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/courses?page=1&size=12`)
+
+    return {
+      props: {
+        courses: [data],
+      },
+    }
   }
 }

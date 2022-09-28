@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import csrf from "csurf";
 import cookieParser from "cookie-parser";
 const morgan = require("morgan");
-require("dotenv").config();
+require("dotenv").config({ path: './config/config.env' });
 
 const csrfProtection = csrf({ cookie: true });
 

@@ -147,7 +147,7 @@ const SingleCourse = ({ course }) => {
 
 export async function getServerSideProps({ query }) {
   const { data } = await axios.get(
-    `/api/course/${query.slug}`,
+    `${process.env.NEXT_PUBLIC_API}/course/${query.slug}`,
   )
   return {
     props: {

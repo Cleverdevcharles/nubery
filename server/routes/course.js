@@ -51,7 +51,7 @@ router.post('/course/video-remove/:instructorId', requireSignin, removeVideo)
 router.put('/course/publish/:courseId', requireSignin, publishCourse)
 router.put('/course/unpublish/:courseId', requireSignin, unpublishCourse)
 
-// `${process.env.NEXT_PUBLIC_API}/course/lesson/${slug}/${course.instructor._id}`,
+// ``/api/course/lesson/${slug}/${course.instructor._id}`,
 router.post('/course/lesson/:slug/:instructorId', requireSignin, addLesson)
 router.put('/course/lesson/:slug/:instructorId', requireSignin, updateLesson)
 router.put('/course/:slug/:lessonId', requireSignin, removeLesson)

@@ -62,7 +62,7 @@ const Profile = () => {
     Resizer.imageFileResizer(file, 720, 500, 'JPEG', 100, 0, async (uri) => {
       try {
         let { data } = await axios.post(
-          `${process.env.NEXT_PUBLIC_API}/upload-image`,
+          `/api/upload-image`,
           {
             image: uri,
           },
@@ -84,7 +84,7 @@ const Profile = () => {
       // console.log(values);
       setValues({ ...values, loading: true })
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_API}/remove-image`,
+        `/api/remove-image`,
         { image },
       )
       setImage({})
@@ -105,7 +105,7 @@ const Profile = () => {
       setValues({ ...values, loading: true })
 
       const { data } = await axios.put(
-        `${process.env.NEXT_PUBLIC_API}/update-account`,
+        `/api/update-account`,
         {
           name,
           email,
