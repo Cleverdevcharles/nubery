@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.sign-up, .sign-in {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sign-up{
+    background-image: url('./Sign-Up.jpg');
+    margin-top: 70px;
+}
+.sign-in{
+    background-image: url('./Sign-In.jpg');
+    height: 80vh;
+    margin-top: -40px;
+}
+.sign-in form{
+   position: relative;
+   top: 20%;
+}
+
 .owl-carousel .owl-item img {
     width: 60% !important;
     margin-left: auto !important;

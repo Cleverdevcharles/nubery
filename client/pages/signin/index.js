@@ -89,7 +89,7 @@ const Signin = () => {
   }
 
   return (
-    <div style={{ height: '80vh', marginTop: '150px' }}>
+    <div className='sign-in'>
       <form
         onSubmit={handleSubmit}
         className="bg-grey-lighter my-10 flex flex-c0l"
@@ -144,11 +144,13 @@ const Signin = () => {
             <Link href="/forgot-password">Forgot Password?</Link>
           </div>
 
-          <div className="text-grey-dark mt-6">
+          <div className="mt-6 text-white">
             Do not have an account?{' '}
-            <span className="no-underline border-b border-blue font-bold text-brightRed ml-1">
-              <Link href="/signup">Sign Up</Link>
-            </span>
+              <Link href="/signup">
+                <span style={{cursor: "pointer"}} className="no-underline border-b border-blue font-bold text-white ml-1">
+                    Sign Up
+                </span>
+              </Link>
           </div>
         </div>
       </form>

@@ -138,7 +138,7 @@ const Signup = () => {
   }
 
   return (
-    <>
+    <div className='sign-up'>
       <form
         style={{ marginTop: '-70px' }}
         onSubmit={handleSubmit}
@@ -248,15 +248,17 @@ const Signup = () => {
             </div>
           </div>
 
-          <div className="text-grey-dark mt-6">
+          <div className="text-white mt-6">
             Already have an account?{' '}
-            <span className="no-underline border-b border-blue font-bold text-brightRed ml-1">
-              <Link href="/signin">Log in</Link>
-            </span>
+              <Link href="/signin">
+                <span style={{cursor: "pointer"}} className="no-underline border-b border-blue font-bold text-white ml-1">
+                    Log in
+                </span>
+              </Link>
           </div>
         </div>
       </form>
-    </>
+    </div>
   )
 }
 

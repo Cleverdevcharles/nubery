@@ -28,7 +28,7 @@ const howToBecome_Instructor = () => {
           <div className="row">
             <div className="col-lg-6 order-lg-2">
               <div className="about-thumb responsive_bottom">
-                <img src="/images/become-thumb.png" alt="" />
+                <img src="/images/Tutor.png" alt="" />
               </div>
             </div>
             <div className="col-lg-6 d-flex align-items-center">
@@ -207,7 +207,7 @@ const howToBecome_Instructor = () => {
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-6">
               <div className="join-team-thumb-wrap">
-                <img src="/images/monitor.png" alt="" />
+                <img src="/images/Why-Teach.png" alt="" />
               </div>
             </div>
             <div className="col-xl-5 col-lg-6">
@@ -245,6 +245,7 @@ const howToBecome_Instructor = () => {
                         ></path>
                       </svg>
                       <span>Tech your students as you want.</span>
+                      
                     </li>
                     <li>
                       <svg

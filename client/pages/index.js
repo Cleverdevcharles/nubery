@@ -52,7 +52,7 @@ export default function Home({ courses }) {
         <div className="section-title" style={{ marginTop: '50px' }}>
           <h2>Recently Added</h2>
         </div>
-        <div className="m-5 p-3 pt-4 mt-5 shadow-lg shadow-indigo-500/40">
+        <div className="m-5 p-3 pt-4 mt-5">
         <div className="row">
           <div className="col-12 pb-5">
             {courses.map((course) => (
