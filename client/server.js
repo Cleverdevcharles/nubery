@@ -15,7 +15,7 @@ app
       server.use(
         '/api',
         createProxyMiddleware({
-          target: 'http://93.188.163.178',
+          target: 'http://localhost:8000',
           changeOrigin: true,
         }),
       )
@@ -27,7 +27,7 @@ app
 
     server.listen(3000, (err) => {
       if (err) throw err
-      console.log('> Ready on http://93.188.163.178')
+      console.log('> Ready on http://localhost:8000')
     })
   })
   .catch((err) => {
