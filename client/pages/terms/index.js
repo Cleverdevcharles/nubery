@@ -9,7 +9,9 @@ const Terms = () => {
       </Head>
       <h1 className="text-center font-bold text-6xl">Terms and Conditions</h1>
       <div>
-        <p className="text-center italic">These Terms of Use ("Terms") were last updated on Nov. 10, 2022.</p>
+        <p className="text-center italic">
+          These Terms of Use ("Terms") were last updated on Nov. 10, 2022.
+        </p>
         <p className=" mt-3 font-semibold">
           If you live in the United States or Canada, by agreeing to these
           Terms, you agree to resolve disputes with Nubery through binding
@@ -50,7 +52,43 @@ const Terms = () => {
           </li>
           <li>
             <h4 className="mt-3 font-bold">Payments and Refunds</h4>
-            <p className="mt-2"></p>
+            <p className="mt-2">
+              {" "}
+              The pricing of the contents on nubery depends on the negiotiation
+              with the instrutor and the promotion that is active at time of
+              purchase.
+            </p>
+            <p className="mt-2">
+              You agree to pay the fees for content that you purchase, and you
+              authorize us to charge your debit or credit card or process other
+              means of payment (such as Stripe, apple pay, direct debit, or
+              mobile wallet) for those fees. Nubery works with payment service
+              providers to offer you the most convenient payment methods in your
+              country and to keep your payment information secure. We may update
+              your payment methods using information provided by our payment
+              service providers.
+            </p>
+            <h5 className="mt-2 font-semibold">Refunds</h5>
+            <p className="mt-2">
+              If the content you purchased is not what you were expecting, you
+              can request, within 30 days of your purchase of the content, that
+              Nubery apply a refund to your account.
+            </p>
+            <p className="mt-2">
+              If we decide to issue refund credits to your account, they will be
+              automatically applied towards your next content purchase on our
+              website
+            </p>
+          </li>
+          <li>
+            <h4>Content Enrollment and Lifetime Access</h4>
+            <p className="mt-2">
+              We generally give a lifetime access license to our students when
+              they enroll in a course. However, we reserve the
+              right to revoke any license to access at any
+              point in time in the event where we decide or are obligated to
+              disable access to the course due to legal or policy reasons.
+            </p>
           </li>
         </ol>
       </div>
