@@ -176,10 +176,7 @@ const Footer = () => {
                 <div className="footer-menu">
                   <ul>
                     <li>
-                      <Link href="/help-center">Help Center</Link>
-                    </li>
-                    <li>
-                      <Link href="/faqs">FAQs</Link>
+                      <Link href="/support">Help Center</Link>
                     </li>
                     <li>
                       <Link href="/terms">Terms & Condition</Link>
