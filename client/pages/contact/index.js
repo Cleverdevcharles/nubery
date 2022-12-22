@@ -3,15 +3,15 @@ import Link from "next/link";
 
 const Contact = () => {
   return <div>
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid sm:grid-cols-2 gap-4">
         <div className="mt-20">
             <h1 className="text-center font-black text-[50px]">Contact Us</h1>
         </div>
-        <div>
+        <div className="hidden sm:block">
             <img src="/images/contact-us.jpg" alt="contact us" />
         </div>
     </div>
-    <div className="w-2/3 mx-auto grid grid-cols-2 gap-1">
+    <div className="sm:w-2/3 mx-2 sm:mx-auto grid sm:grid-cols-2 grid-rows-2 gap-3 sm-gap-1 mb-10">
     <div className="flex justify-center">
   <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
     <h5 className="text-gray-900 text-xl leading-tight font-bold mb-2 text-center">Talk to a member of our team</h5>
