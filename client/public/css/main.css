@@ -236,6 +236,38 @@
 .form-searchbox input:focus {
   border: 1px solid #ff6636;
 }
+.contact_title{
+  font-weight: bold;
+  font-size: 30px;
+  background: linear-gradient(to right, #ff6636, #000000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact_email{
+  color: #ff6636;
+  text-decoration: none;
+
+}
+.contact_email:hover{
+  color: #ff6636;
+  text-decoration: underline;
+}
+.contact-btn{
+  background: #ff6636; 
+  transition: all 0.1s ease-in-out;
+}
+.contact-btn:hover{
+  background: #cc522b; 
+}
+.contact-input{
+  background: #ffddd190; 
+}
+.contact-input:focus{
+  background: #ffddd1; 
+  border: 1px solid #ff6636;
+}
+
 
 * {
   margin: 0;
