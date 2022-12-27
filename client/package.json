@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@emailjs/browser": "^3.10.0",
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "v1",
     "@stripe/stripe-js": "^1.36.0",

@@ -186,7 +186,7 @@ export default Index
 export async function getServerSideProps({ query: p }) {
   if (p.search == undefined) {
     const { data } = await axios.get(
-      `${process.env.API}/courses?page=${p.page}&size=${p.size}`,
+      `${process.env.BACKEND_API}/courses?page=${p.page}&size=${p.size}`,
     )
 
     return {
@@ -195,7 +195,7 @@ export async function getServerSideProps({ query: p }) {
       },
     }
   } else {
-    const { data } = await axios.get(`${process.env.API}/courses?name=${p.search}`)
+    const { data } = await axios.get(`${process.env.BACKEND_API}/courses?name=${p.search}`)
     return {
       props: {
         courses: [data],

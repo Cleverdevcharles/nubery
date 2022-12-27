@@ -10,14 +10,14 @@ import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <SkeletonTheme color="grey" highlightColor="#444">
     <Provider>
+    <SkeletonTheme color="grey" highlightColor="#444">
       <Layout>
         <ToastContainer position="top-center" />
         <Component {...pageProps} />
       </Layout>
-    </Provider>
     </SkeletonTheme>
+    </Provider>
   )
 }
 

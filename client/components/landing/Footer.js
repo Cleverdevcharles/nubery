@@ -33,7 +33,7 @@ const Footer = () => {
                 <p>
                 Become an instructor & start teaching with certified instructors. Create a success story with students — Grow yourself with countries.
                 </p>
-                <div className="social-icon footer-social">
+                {/* <div className="social-icon footer-social">
                   <ul>
                     <li>
                       <a href="#">
@@ -134,7 +134,7 @@ const Footer = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -145,9 +145,6 @@ const Footer = () => {
                 </div>
                 <div className="footer-menu">
                   <ul>
-                    <li>
-                      <Link href="/about">About</Link>
-                    </li>
                     {user !== null ? (
                       <li>
                         <Link href="/user/become-instructor">
@@ -179,9 +176,6 @@ const Footer = () => {
                 <div className="footer-menu">
                   <ul>
                     <li>
-                      <Link href="/support">Help Center</Link>
-                    </li>
-                    <li>
                       <Link href="/terms">Terms & Condition</Link>
                     </li>
                     <li>
@@ -191,7 +185,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-2 col-lg-3  col-md-3">
+            {/* <div className="col-xl-2 col-lg-3  col-md-3">
               <div className="footer-widget">
                 <div className="footer-menu-title dowmload-app">
                   <h4>Downlaod our app</h4>
@@ -221,7 +215,7 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

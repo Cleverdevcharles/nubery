@@ -133,7 +133,7 @@ export default function Home({ courses }) {
 
 export async function getServerSideProps({ query: p }) {
   if (p.search == undefined) {
-    const { data } = await axios.get(`${process.env.API}/courses?page=1&size=12`)
+    const { data } = await axios.get(`${process.env.BACKEND_API}/courses?page=1&size=12`)
 
     return {
       props: {

@@ -6,20 +6,9 @@ import axios from 'axios'
 import { Context } from '../../../context'
 
 const StripeSuccess = () => {
-  // router
   const router = useRouter()
   const { id } = router.query
-  // const {
-  //   state: { user },
-  //   dispatch,
-  // } = useContext(Context)
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     router.push('/')
-  //     return null
-  //   }
-  // }, [])
   useEffect(() => {
     if (id) successRequest()
   }, [id])
@@ -30,7 +19,6 @@ const StripeSuccess = () => {
     const { data } = await axios.get(
       `/api/stripe-success/${id}`,
     )
-    // console.log("SUCCESS REQ DATA", data);
     router.push(`/user/course/${data.course.slug}`)
   }
 

@@ -11,12 +11,6 @@ const StripeCallback = () => {
   } = useContext(Context)
   const router = useRouter()
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     router.push('/')
-  //     return null
-  //   }
-  // }, [user])
 
   useEffect(() => {
     if (user) {

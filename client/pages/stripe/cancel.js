@@ -6,17 +6,7 @@ import { Context } from '../../context'
 
 const StripeCancel = () => {
   const router = useRouter()
-  // const {
-  //   state: { user },
-  //   dispatch,
-  // } = useContext(Context)
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     router.push('/')
-  //     return null
-  //   }
-  // }, [user])
   return (
     <UserRoute showNav={false}>
       <div className="row text-center">
