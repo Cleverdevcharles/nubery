@@ -36,6 +36,7 @@ const CourseCreate = () => {
 
   // router
   const router = useRouter()
+
   useEffect(() => {
     loadCategories()
   }, [])
@@ -68,7 +69,7 @@ const CourseCreate = () => {
             image: uri,
           },
         )
-        console.log('IMAGE UPLOADED', data)
+        // console.log('IMAGE UPLOADED', data)
         // set image in the state
         setImage(data)
         setValues({ ...values, loading: false })

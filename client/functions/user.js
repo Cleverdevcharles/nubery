@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const userCart = async (cart, authtoken) =>
   await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/user/cart`,
+    `/api/user/cart`,
     { cart },
     {
       headers: {
@@ -12,14 +12,14 @@ export const userCart = async (cart, authtoken) =>
   )
 
 export const getUserCart = async (authtoken) =>
-  await axios.get(`${process.env.NEXT_PUBLIC_API}/user/cart`, {
+  await axios.get(`/api/user/cart`, {
     headers: {
       authtoken,
     },
   })
 
 export const emptyUserCart = async (authtoken) =>
-  await axios.delete(`${process.env.NEXT_PUBLIC_API}/user/cart`, {
+  await axios.delete(`/api/user/cart`, {
     headers: {
       authtoken,
     },
@@ -27,7 +27,7 @@ export const emptyUserCart = async (authtoken) =>
 
 export const saveUserAddress = async (authtoken, address) =>
   await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/user/address`,
+    `/api/user/address`,
     { address },
     {
       headers: {
@@ -38,7 +38,7 @@ export const saveUserAddress = async (authtoken, address) =>
 
 export const applyCoupon = async (authtoken, coupon) =>
   await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/user/cart/coupon`,
+    `/api/user/cart/coupon`,
     { coupon },
     {
       headers: {
@@ -49,7 +49,7 @@ export const applyCoupon = async (authtoken, coupon) =>
 
 export const createOrder = async (stripeResponse, authtoken) =>
   await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/user/order`,
+    `/api/user/order`,
     { stripeResponse },
     {
       headers: {
@@ -59,14 +59,14 @@ export const createOrder = async (stripeResponse, authtoken) =>
   )
 
 export const getUserOrders = async (authtoken) =>
-  await axios.get(`${process.env.NEXT_PUBLIC_API}/user/orders`, {
+  await axios.get(`/api/user/orders`, {
     headers: {
       authtoken,
     },
   })
 
 export const getWishlist = async (authtoken) =>
-  await axios.get(`${process.env.NEXT_PUBLIC_API}/user/wishlist`, {
+  await axios.get(`/api/user/wishlist`, {
     headers: {
       authtoken,
     },
@@ -74,7 +74,7 @@ export const getWishlist = async (authtoken) =>
 
 export const removeWishlist = async (productId, authtoken) =>
   await axios.put(
-    `${process.env.NEXT_PUBLIC_API}/user/wishlist/${productId}`,
+    `/api/user/wishlist/${productId}`,
     {},
     {
       headers: {
@@ -85,7 +85,7 @@ export const removeWishlist = async (productId, authtoken) =>
 
 export const addToWishlist = async (productId, authtoken) =>
   await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/user/wishlist`,
+    `/api/user/wishlist`,
     { productId },
     {
       headers: {
@@ -100,7 +100,7 @@ export const createCashOrderForUser = async (
   couponTrueOrFalse,
 ) =>
   await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/user/cash-order`,
+    `/api/user/cash-order`,
     { couponApplied: couponTrueOrFalse, COD },
     {
       headers: {

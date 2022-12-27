@@ -27,9 +27,7 @@ const SingleCourse = ({ course }) => {
 
   const checkEnrollment = async () => {
     const { data } = await axios.get(
-      `/api/check-enrollment/${
-        course && course[0]._id
-      }`,
+      `/api/check-enrollment/${course && course[0]._id}`,
     )
     // console.log('CHECK ENROLLMENT', data)
     setEnrolled(data)
@@ -48,9 +46,7 @@ const SingleCourse = ({ course }) => {
       if (enrolled.status)
         return router.push(`/user/course/${enrolled.course.slug}`)
       const { data } = await axios.post(
-        `/api/paid-enrollment/${
-          course && course[0]._id
-        }`,
+        `/api/paid-enrollment/${course && course[0]._id}`,
       )
       const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY)
       stripe.redirectToCheckout({ sessionId: data })
@@ -72,9 +68,7 @@ const SingleCourse = ({ course }) => {
         return router.push(`/user/course/${enrolled.course.slug}`)
       setLoading(true)
       const { data } = await axios.post(
-        `/api/free-enrollment/${
-          course && course[0]._id
-        }`,
+        `/api/free-enrollment/${course && course[0]._id}`,
       )
       toast(data.message)
       setLoading(false)
@@ -124,7 +118,7 @@ const SingleCourse = ({ course }) => {
         </div>
 
         <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 py-5">
-          {course && course[0].lessons && (
+          {course && course[0] && (
             <SingleCourseLessons
               lessons={course.lessons}
               setPreview={setPreview}
@@ -146,9 +140,7 @@ const SingleCourse = ({ course }) => {
 }
 
 export async function getServerSideProps({ query }) {
-  const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_API}/course/${query.slug}`,
-  )
+  const { data } = await axios.get(`${process.env.API}/course/${query.slug}`)
   return {
     props: {
       course: [data],

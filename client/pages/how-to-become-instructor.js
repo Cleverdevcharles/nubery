@@ -35,9 +35,9 @@ const howToBecome_Instructor = () => {
               <div className="about-content become-instructor">
                 <h2>Become an Instuctor</h2>
                 <p>
-                  Become an instructor & start teaching with 26k certified
-                  instructors. Create a success story with 67.1k Students — Grow
-                  yourself with 71 countries.
+                  Become an instructor & start teaching with certified
+                  instructors. Create a success story with students — Grow
+                  yourself with countries.
                 </p>
                 <Link href="/signup">
                   <span className="button button--lg cursor-pointer">
@@ -98,13 +98,13 @@ const howToBecome_Instructor = () => {
               </div>
               <div className="counter-data">
                 <h2 className="counter-number">
-                  <span
+                  {/* <span
                     data-percentage="67.1"
                     className="etutor-counter"
-                  ></span>
-                  k
+                  ></span> */}
+                  Students
                 </h2>
-                <p>Students</p>
+                {/* <p>Students</p> */}
               </div>
             </div>
             <div className="counter-item">
@@ -153,9 +153,10 @@ const howToBecome_Instructor = () => {
               </div>
               <div className="counter-data">
                 <h2 className="counter-number">
-                  <span data-percentage="26" className="etutor-counter"></span>k
+                  {/* <span data-percentage="26" className="etutor-counter"></span> */}
+                  Certified Instructor
                 </h2>
-                <p>Certified Instructor</p>
+                {/* <p>Certified Instructor</p> */}
               </div>
             </div>
             <div className="counter-item">
@@ -771,7 +772,7 @@ const howToBecome_Instructor = () => {
                   </a>
                   <div className="help-center-data">
                     <p>Email us, anytime anywhere</p>
-                    <a href="">help.Nubery@gamil.com</a>
+                    <a href="mailto:nuberydotnet@gamil.com">nuberydotnet@gamil.com</a>
                   </div>
                 </div>
               </div>

@@ -141,7 +141,7 @@ const Signin = () => {
             >
               {loading ? <SyncOutlined spin /> : 'Login'}
             </button>
-            <Link href="/forgot-password">Forgot Password?</Link>
+            <Link href="/forgot-password"><a className="link">Forgot Password?</a></Link>
           </div>
 
           <div className="mt-6 text-white">

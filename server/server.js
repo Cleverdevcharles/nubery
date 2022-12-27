@@ -20,8 +20,8 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(() => console.log("**DB CONNECTED**"))
-  .catch((err) => console.log("DB CONNECTION ERR => ", err));
+  .then(() => console.log("> MONGODB CONNECTED"))
+  .catch((err) => console.log("> MONGODB CONNECTION ERR: ", err));
 
 // apply middlewares
 app.use(cors());
@@ -41,4 +41,4 @@ app.get("/api/csrf-token", (req, res) => {
 // port
 const port = process.env.PORT || 8000;
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => console.log(`> Server is running on port ${port}`));

@@ -15,7 +15,7 @@ const AdminRoute = ({ children }) => {
 
   const fetchAdmin = async () => {
     try {
-      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/current-admin`)
+      const { data } = await axios.get(`/api/current-admin`)
 
       // console.log('ADMIN ROUTE => ', data)
       if (data.ok) setOk(true)

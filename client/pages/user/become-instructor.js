@@ -21,12 +21,12 @@ const BecomeInstructor = () => {
   } = useContext(Context)
   const router = useRouter()
 
-  useEffect(() => {
-    if (!user) {
-      router.push('/')
-      return null
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (!user) {
+  //     router.push('/')
+  //     return null
+  //   }
+  // }, [])
 
   const becomeInstructor = () => {
     // console.log("become instructor");
@@ -44,15 +44,15 @@ const BecomeInstructor = () => {
       })
   }
 
-  useEffect(() => {
-    if (!user) {
-      router.push('/')
-      return null
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (!user) {
+  //     router.push('/')
+  //     return null
+  //   }
+  // }, [])
 
   return (
-    <>
+    <UserRoute>
       <div className="bredadcrumb-section">
         <div className="container">
           <div className="breadcrumb-menu">
@@ -100,7 +100,7 @@ const BecomeInstructor = () => {
           </div>
         </div>
       </div>
-    </>
+    </UserRoute>
   )
 }
 

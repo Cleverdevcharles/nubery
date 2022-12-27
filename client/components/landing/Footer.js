@@ -27,8 +27,11 @@ const Footer = () => {
                   </Link>
                 </div>
                 <p>
-                  Aliquam rhoncus ligula est, non pulvinar elit convallis nec.
-                  Donec mattis odio at.
+                Our mision is to help people to find the best course online and learn with expert anytime, anywhere.
+                </p>
+                <br/>
+                <p>
+                Become an instructor & start teaching with certified instructors. Create a success story with students — Grow yourself with countries.
                 </p>
                 <div className="social-icon footer-social">
                   <ul>

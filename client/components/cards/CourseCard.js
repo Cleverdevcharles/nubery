@@ -33,7 +33,11 @@ const CourseCard = ({ course }) => {
       {course && (
         <>
           {course.map((c) => (
-            <div key={c._id}>
+           <>
+            {
+              c &&
+
+              <div key={c._id}>
               <Card className="mb-4">
                 <div
                   style={{
@@ -107,6 +111,8 @@ const CourseCard = ({ course }) => {
                 </div>
               </Card>
             </div>
+            }
+           </>
           ))}
         </>
       )}

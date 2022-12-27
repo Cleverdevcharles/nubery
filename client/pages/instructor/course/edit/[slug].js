@@ -26,11 +26,12 @@ const CourseEdit = () => {
     downloadableResourses: '',
     uploading: false,
     paid: true,
-    categories: [],
     category: '',
     subs: [],
     loading: false,
   })
+
+  const [categories, setCategories] = useState([])
   const [subOptions, setSubOptions] = useState([])
   const [showSub, setShowSub] = useState(false)
   const [image, setImage] = useState({})
@@ -52,21 +53,25 @@ const CourseEdit = () => {
   const { slug } = router.query
 
   useEffect(() => {
-    loadCourse()
-  }, [slug])
-
-  useEffect(() => {
     loadCategories()
   }, [])
 
-  const loadCategories = () =>
-    getCategories().then((c) => setValues({ ...values, categories: c.data }))
+  useEffect(() => {
+    loadCourse()
+  }, [slug])
+
+  const loadCategories = () => {
+    getCategories().then((c) => {
+      setCategories(c.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
 
   const loadCourse = async () => {
     const { data } = await axios.get(
       `/api/course/${slug}`,
     )
-    console.log(data)
     if (data) setValues(data)
     if (data && data.image) setImage(data.image)
   }
@@ -210,7 +215,7 @@ const CourseEdit = () => {
           setProgress(Math.round((100 * e.loaded) / e.total)),
       },
     )
-    console.log(data)
+    // console.log(data)
 
     let media = new Audio(videoFile)
     media.onloadedmetadata = function () {
@@ -258,7 +263,7 @@ const CourseEdit = () => {
 
   const handleCategoryChange = (e) => {
     e.preventDefault()
-    setValues({ ...values, subs: [], category: e.target.value })
+    setValues({ ...values, subs: [], category: e.target.value})
     getCategorySubs(e.target.value).then((res) => {
       setSubOptions(res.data)
     })
@@ -287,6 +292,8 @@ const CourseEdit = () => {
                   handleChange={handleChange}
                   values={values}
                   setValues={setValues}
+                  categories={categories}
+                  setCategories={setCategories}
                   preview={preview}
                   uploadButtonText={uploadButtonText}
                   handleCategoryChange={handleCategoryChange}

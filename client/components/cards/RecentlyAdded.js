@@ -88,8 +88,8 @@ const RecentlyAdded = ({ course }) => {
                       slug={c.slug}
                       language={c.language}
                       courseLevel={c.courseLevel}
-                      instructorPicture={c.instructor.image.Location}
-                      instructorName={c.instructor.name}
+                      instructorPicture={c.instructor && c.instructor.image.Location}
+                      instructorName={c.instructor && c.instructor.name}
                       price={c.price}
                       oldPrice={c.oldPrice}
                       // numOfReview={c.numOfReview}

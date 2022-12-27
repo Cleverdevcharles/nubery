@@ -6,10 +6,14 @@ const CourseDescription = ({ course }) => {
       {course && (
         <>
         {course.map((c) => (
+          <>
+          {c && 
           <div key={c._id}>
-            <h4 className="font-bold text-2xl mb-3">Course Description</h4>
-            <div className="border p-4">{c.description}</div>
-          </div>
+          <h4 className="font-bold text-2xl mb-3">Course Description</h4>
+          <div className="border p-4">{c.description}</div>
+        </div>
+          }
+          </>
         ))}
         </>
       )}

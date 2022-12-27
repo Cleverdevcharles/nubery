@@ -1,32 +1,46 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Nubery backend server",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon -r esm server.js"
+    "start": "node -r esm server.js",
+    "dev": "nodemon -r esm server.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devcharlezen/nubery.git#master"
+  },
+  "keywords": [
+    "nubery",
+    "server",
+    "api",
+    "backend"
+  ],
+  "author": "Mbaogu Charles Chiakpaoke (Devcharlezen)",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devcharlezen/nubery/issues"
+  },
+  "homepage": "https://github.com/devcharlezen/nubery/tree/master#readme",
   "dependencies": {
-    "aws-sdk": "^2.876.0",
-    "bcrypt": "^5.0.1",
-    "cookie-parser": "^1.4.5",
+    "aws-sdk": "^2.1278.0",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.0.3",
     "esm": "^3.2.25",
-    "express": "^4.17.1",
+    "express": "4.17.1",
     "express-formidable": "^1.2.0",
-    "express-jwt": "^6.0.0",
+    "express-jwt": "6.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.0",
+    "mongoose": "5.12.0",
     "morgan": "^1.10.0",
-    "nanoid": "^3.1.22",
-    "nodemon": "^2.0.7",
-    "query-string": "^7.0.0",
-    "slugify": "^1.5.0",
-    "stripe": "^8.141.0"
+    "nanoid": "3.1.22",
+    "nodemon": "^2.0.20",
+    "query-string": "7.0.0",
+    "slugify": "^1.6.5",
+    "stripe": "^11.4.0"
   }
 }

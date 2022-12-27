@@ -53,70 +53,26 @@ export default function Home({ courses }) {
           <h2>Recently Added</h2>
         </div>
         <div className="m-5 p-3 pt-4 mt-5">
-        <div className="row">
-          <div className="col-12 pb-5">
-            {courses.map((course) => (
-              <div key={course._id}>
-                <RecentlyAdded key={course._id} course={course} />
-              </div>
-            ))}
-            {pathname !== '/' ? null : (
-              <div className="footer-button text-center">
-                <Link href="/courses">
-                  <a className="button button--lg button-p-s button-i--r">
-                    Browse all Course
-                  </a>
-                </Link>
-              </div>
-            )}
+          <div className="row">
+            <div className="col-12 pb-5">
+              {courses.map((course, i) => (
+                <div key={i}>
+                  <RecentlyAdded key={course._id} course={course} />
+                </div>
+              ))}
+              {pathname !== '/' ? null : (
+                <div className="footer-button text-center">
+                  <Link href="/courses">
+                    <a className="button button--lg button-p-s button-i--r">
+                      Browse all Course
+                    </a>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      {/* <div className="top-rated">
-        <div className="section-title" style={{ marginTop: '50px' }}>
-          <h2>Top Rated</h2>
-        </div>
-        <div className="m-5 p-3 pt-4 mt-5 shadow-lg shadow-indigo-500/40">
-            <div className="row">
-              <div className="col-12">
-              <OwlCarousel
-                className="owl-theme"
-                // loop
-                dots={false}
-                responsiveClass
-                margin={20}
-                responsive={options.responsive}
-              >
-                {courses.map((course) => (
-                  <div key={course._id}>
-                    <TopRated key={course._id} course={course} />
-                  </div>
-                ))}
-              </OwlCarousel>
-              </div>
-            </div>
-        </div>
-      </div>
-      <div className="top-sellers">
-        <div className="section-title" style={{ marginTop: '50px' }}>
-          <h2>Top Sellers</h2>
-        </div>
-        <div className="m-5 p-3 pt-4 mt-5 shadow-lg shadow-indigo-500/40">
-          <OwlCarousel
-            className="owl-theme"
-            // loop
-            dots={false}
-            responsiveClass
-            margin={20}
-            responsive={options.responsive}
-          >
-            {courses.map((course) => (
-              <TopSellers key={course._id} course={course} />
-            ))}
-          </OwlCarousel>
-        </div>
-      </div> */}
 
       <div className="cat-section">
         <div className="container-fluid">
@@ -175,9 +131,9 @@ export default function Home({ courses }) {
   )
 }
 
-export async function getServerSideProps({query: p}) {
-  if(p.search == undefined){
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/courses?page=1&size=12`)
+export async function getServerSideProps({ query: p }) {
+  if (p.search == undefined) {
+    const { data } = await axios.get(`${process.env.API}/courses?page=1&size=12`)
 
     return {
       props: {

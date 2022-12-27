@@ -96,9 +96,7 @@ const ChangePassword = () => {
     }
 
     try {
-      const {
-        data,
-      } = await axios.post(`${process.env.NEXT_PUBLIC_API}/forgot-password`, {
+      const { data } = await axios.post(`/api/forgot-password`, {
         email,
       })
       setSuccess(true)
@@ -116,14 +114,11 @@ const ChangePassword = () => {
     // return;
     try {
       setLoading(true)
-      const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API}/reset-password`,
-        {
-          email,
-          code,
-          newPassword,
-        },
-      )
+      const { data } = await axios.post(`/api/reset-password`, {
+        email,
+        code,
+        newPassword,
+      })
       setEmail('')
       setCode('')
       setNewPassword('')

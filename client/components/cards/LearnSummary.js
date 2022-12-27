@@ -32,7 +32,10 @@ const LearnSummary = ({
         <>
           {course.map((c) => (
 
-          <div className="px-5 py-5 mx-0 md:mx-20" key={c._id}>
+          <>
+            {
+              c &&
+              <div className="px-5 py-5 mx-0 md:mx-20" key={c._id}>
             <h4 className="font-bold text-2xl mb-3">What you'll learn</h4>
             <div className="col-12">
               <div className="row">
@@ -165,6 +168,8 @@ const LearnSummary = ({
               </div>
             </div>
           </div>
+            }
+          </>
           ))}
         </>
       )}

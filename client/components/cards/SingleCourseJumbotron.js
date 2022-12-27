@@ -17,6 +17,8 @@ const SingleCourseJumbotron = ({ course }) => {
     <>
       {course && (
          course.map((c) => (
+          <>
+          {c &&
           <div className="bg-darkBlue" key={c._id}>
           <div className="container p-20 pt-6 text-white space-y-4">
             <a href="#" className="text-brightRed font-semibold">
@@ -50,7 +52,8 @@ const SingleCourseJumbotron = ({ course }) => {
             </p>
           </div>
         </div>
-
+          }
+          </>
         ))
               )}
     </>

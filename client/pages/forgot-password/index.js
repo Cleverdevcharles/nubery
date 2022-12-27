@@ -96,9 +96,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const {
-        data,
-      } = await axios.post(`${process.env.NEXT_PUBLIC_API}/forgot-password`, {
+      const { data } = await axios.post(`/api/forgot-password`, {
         email,
       })
       setSuccess(true)
@@ -116,14 +114,11 @@ const ForgotPassword = () => {
     // return;
     try {
       setLoading(true)
-      const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API}/reset-password`,
-        {
-          email,
-          code,
-          newPassword,
-        },
-      )
+      const { data } = await axios.post(`/api/reset-password`, {
+        email,
+        code,
+        newPassword,
+      })
       setEmail('')
       setCode('')
       setNewPassword('')
@@ -206,7 +201,9 @@ const ForgotPassword = () => {
             <div className="text-grey-dark mt-6">
               Do not have an account?{' '}
               <span className="no-underline border-b border-blue font-bold text-brightRed ml-1">
-                <Link href="/signup">Sign Up</Link>
+                <Link href="/signup">
+                  <a className="link">Sign Up</a>
+                </Link>
               </span>
             </div>
           </div>
