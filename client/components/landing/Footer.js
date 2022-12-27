@@ -179,16 +179,13 @@ const Footer = () => {
                 <div className="footer-menu">
                   <ul>
                     <li>
-                      <Link href="/help-center">Help Center</Link>
+                      <Link href="/support">Help Center</Link>
                     </li>
                     <li>
-                      <Link href="/faqs">FAQs</Link>
+                      <Link href="/terms">Terms & Condition</Link>
                     </li>
                     <li>
-                      <Link href="/terms-condition">Terms & Condition</Link>
-                    </li>
-                    <li>
-                      <Link href="/privacy-policy">Privacy Policy</Link>
+                      <Link href="/privacy">Privacy Policy</Link>
                     </li>
                   </ul>
                 </div>
