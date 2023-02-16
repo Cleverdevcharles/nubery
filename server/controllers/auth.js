@@ -177,43 +177,32 @@ export const forgotPassword = async (req, res) => {
     )
     if (!user)
       return res.status(400).send('User with this email does not exist.')
-
+    const stmp = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_FROM,
+        pass: process.env.PASSWORD,
+      },
+    })
     // prepare for email
-    const params = {
-      Source: process.env.EMAIL_FROM,
-      Destination: {
-        ToAddresses: [email],
-      },
-      Message: {
-        Body: {
-          Html: {
-            Charset: 'UTF-8',
-            Data: `
-                <html>
-                  <h1>Reset password</h1>
-                  <p>Use this code to reset your password</p>
-                  <h2 style="color:red;">${shortCode}</h2>
-                  <i>nubery.com</i>
-                </html>
-              `,
-          },
-        },
-        Subject: {
-          Charset: 'UTF-8',
-          Data: 'Reset Password',
-        },
-      },
+    const mailOptions = {
+      from: EMAIL,
+      to: email,
+      subject: 'Reset Indoex Password',
+      html: `
+      <html>
+        <h1>Reset password</h1>
+        <p>Use this code to reset your password</p>
+        <h2 style="color:red;">${shortCode}</h2>
+        <i>nubery.net</i>
+      </html>
+      `
     }
 
-    const emailSent = SES.sendEmail(params).promise()
-    emailSent
-      .then((data) => {
-        console.log(data)
-        res.json({ ok: true })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    stmp.sendMail(mailOptions, (err, res) => {
+      if (err) return err
+      return res
+    })
   } catch (err) {
     console.log(err)
   }

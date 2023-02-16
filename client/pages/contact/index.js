@@ -10,7 +10,7 @@ const Contact = () => {
     e.preventDefault()
       setLoading(true)
   
-      emailjs.sendForm(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, form.current, process.env.EMAILJS_PUBLIC_KEY)
+      emailjs.sendForm('service_5lhr1nb', 'template_4p3t1yt', form.current, 'idgGimuCllx09Ejjk')
         .then((result) => {
           console.log(result.text);
           setLoading(false)
