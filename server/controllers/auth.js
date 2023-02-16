@@ -3,6 +3,7 @@ import { hashPassword, comparePassword } from "../utils/auth";
 import jwt from "jsonwebtoken";
 import { nanoid } from "nanoid";
 import AWS from "aws-sdk";
+import nodemailer from "nodemailer";
 
 const awsConfig = {
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -186,7 +187,7 @@ export const forgotPassword = async (req, res) => {
     })
     // prepare for email
     const mailOptions = {
-      from: EMAIL,
+      from: process.env.EMAIL,
       to: email,
       subject: 'Reset Indoex Password',
       html: `
