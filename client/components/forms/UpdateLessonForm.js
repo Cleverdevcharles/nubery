@@ -35,12 +35,15 @@ const UpdateLessonForm = ({
         <div>
           {!uploading && current.video && current.video.Location && (
             <div className="pt-2 d-flex justify-content-center">
-              <ReactPlayer
-                url={current.video.Location}
-                width="410px"
-                height="240px"
-                controls
-              />
+              <video controls width="100%" controlsList="nodownload" preload="metadata">
+                <source src={current.video.Location} type="video/webm" />
+                <track
+                  label="English"
+                  kind="subtitles"
+                  srclang="en"
+                  src="captions/vtt/sintel-en.vtt"
+                  default />
+              </video>
             </div>
           )}
 

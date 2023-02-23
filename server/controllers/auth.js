@@ -187,7 +187,7 @@ export const forgotPassword = async (req, res) => {
     })
     // prepare for email
     const mailOptions = {
-      from: process.env.EMAIL,
+      from: process.env.EMAIL_FROM,
       to: email,
       subject: 'Reset Indoex Password',
       html: `

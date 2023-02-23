@@ -217,7 +217,7 @@ const CourseEdit = () => {
     )
     // console.log(data)
 
-    let media = new Audio(videoFile)
+    let media = new Audio(videoData)
     media.onloadedmetadata = function () {
       media.duration
       // this would give duration of the video/audio file

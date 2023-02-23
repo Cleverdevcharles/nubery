@@ -12,19 +12,17 @@ const PreviewModal = ({ showModal, setShowModal, preview, course }) => {
         footer={null}
       >
         <div>
-          <ReactPlayer
-            url={preview}
-            playing={showModal}
-            config={{
-              file: {
-                attributes: { controlsList: 'nodownload' },
-              },
-            }}
+          <video controls width="100%" controlsList="nodownload" preload="metadata"
             onContextMenu={(e) => e.preventDefault()}
-            controls
-            width="100%"
-            height="100%"
-          />
+          >
+            <source src={preview} type="video/webm" />
+            <track
+              label="English"
+              kind="subtitles"
+              srclang="en"
+              src="captions/vtt/sintel-en.vtt"
+              default />
+          </video>
         </div>
       </Modal>
     </>

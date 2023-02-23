@@ -34,11 +34,26 @@ const AddLessonForm = ({
           placeholder="Content"
         ></textarea>
 
+          {values.video.Location && (
+            <div className="pt-2 d-flex justify-content-center">
+              <video controls width="100%" controlsList="nodownload" preload="metadata">
+                <source src={values.video.Location} type="video/webm" />
+                <track
+                  label="English"
+                  kind="subtitles"
+                  srclang="en"
+                  src="captions/vtt/sintel-en.vtt"
+                  default />
+              </video>
+            </div>
+          )}
+
         <div className="d-flex justify-content-center">
           <label className="btn btn-dark btn-block text-left mt-3">
             {uploadButtonText}
             <input onChange={handleVideo} type="file" accept="video/*" hidden />
           </label>
+
 
           {!uploading && values.video.Location && (
             <Tooltip title="Remove">
@@ -70,7 +85,7 @@ const AddLessonForm = ({
           loading={uploading}
           shape="round"
         >
-          Save
+          {uploading ? 'Uploading....' : 'Save'}
         </button>
       </form>
     </div>
