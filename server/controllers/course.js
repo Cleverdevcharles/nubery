@@ -135,15 +135,12 @@ export const uploadVideo = async (req, res) => {
       ContentType: video.type,
     };
 
-    console.log(params)
-
     // upload to s3
     S3.upload(params, (err, data) => {
       if (err) {
         console.log(err);
         res.sendStatus(400);
       }
-      console.log(data);
       res.send(data);
     });
   } catch (err) {

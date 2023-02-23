@@ -110,8 +110,63 @@ const ChangePassword = () => {
 
   const handleResetPassword = async (e) => {
     e.preventDefault()
-    // console.log(email, code, newPassword);
-    // return;
+    setLoading(true)
+    const strongRegexSpecialCharacter = /^(.*\W).*$/
+    const strongRegexHighercase = new RegExp('^(?=.*[A-Z])')
+    const strongRegexLowercase = new RegExp('^(?=.*[a-z])')
+    const strongRegexNumber = new RegExp('^(?=.*[0-9])')
+
+    if (!email) {
+      setLoading(false)
+      return toast.error('Email is requried.')
+    }
+
+    if (email) {
+      if (!validateEmail(email)) {
+        setLoading(false)
+        return toast.error('Invalid email address.')
+      }
+    }
+
+    if (success && !code) {
+      setLoading(false)
+      return toast.error('Secret code is requried.')
+    }
+
+    if (success && !password) {
+      setLoading(false)
+      return toast.error('Password is requried.')
+    }
+
+    if (success && password) {
+      if (password.length < 6) {
+        setLoading(false)
+        return toast.error('Password should be minimum of 6 characters long.')
+      }
+      if (password.length > 64) {
+        setLoading(false)
+        return toast.error('Password should be maximum of 64 characters long.')
+      }
+      if (!strongRegexHighercase.test(password)) {
+        setLoading(false)
+        return toast.error('Password must contain at least an uppercase.')
+      }
+      if (!strongRegexLowercase.test(password)) {
+        setLoading(false)
+        return toast.error('Password must contain at least a lowercase.')
+      }
+      if (!strongRegexNumber.test(password)) {
+        setLoading(false)
+        return toast.error('Password must contain at least one number.')
+      }
+      if (!strongRegexSpecialCharacter.test(password)) {
+        setLoading(false)
+        return toast.error(
+          'Password must contain at least one special character.',
+        )
+      }
+    }
+
     try {
       setLoading(true)
       const { data } = await axios.post(`/api/reset-password`, {

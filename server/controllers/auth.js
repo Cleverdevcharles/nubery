@@ -1,9 +1,9 @@
-import User from "../models/user";
-import { hashPassword, comparePassword } from "../utils/auth";
-import jwt from "jsonwebtoken";
-import { nanoid } from "nanoid";
-import AWS from "aws-sdk";
-import nodemailer from "nodemailer";
+import User from '../models/user'
+import { hashPassword, comparePassword } from '../utils/auth'
+import jwt from 'jsonwebtoken'
+import { nanoid } from 'nanoid'
+import AWS from 'aws-sdk'
+import nodemailer from 'nodemailer'
 
 const awsConfig = {
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -197,7 +197,7 @@ export const forgotPassword = async (req, res) => {
         <h2 style="color:red;">${shortCode}</h2>
         <i>nubery.net</i>
       </html>
-      `
+      `,
     }
 
     stmp.sendMail(mailOptions, (err, res) => {
@@ -214,7 +214,24 @@ export const resetPassword = async (req, res) => {
     const { email, code, newPassword } = req.body
     const hashedPassword = await hashPassword(newPassword)
 
-    const user = User.findOneAndUpdate(
+    const checkUser = User.findOne({ email })
+    if (!code) {
+      return res
+        .status(400)
+        .send('Secret Code is required!! Check your email for the secret code.')
+    }
+
+    if (!newPassword || newPassword === " ") {
+      return res.status(400).send('Please provide your new password')
+    }
+
+    if (code !== checkUser.passwordResetCode) {
+      return res
+        .status(400)
+        .send('Secret Code is invalid. Check your email for the secret code.')
+    }
+
+    const user = await User.findOneAndUpdate(
       {
         email,
         passwordResetCode: code,
@@ -224,10 +241,7 @@ export const resetPassword = async (req, res) => {
         passwordResetCode: '',
       },
     ).exec()
-    if (!code)
-      return res
-        .status(400)
-        .send('Secret Code is required!! Check your email for the secret code.')
+
 
     res.json({ ok: true })
   } catch (err) {

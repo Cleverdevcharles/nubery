@@ -150,7 +150,7 @@ const CourseView = () => {
     } catch (err) {
       console.log(err)
       setUploading(false)
-      toast('Video upload failed')
+      // toast('Video upload failed')
     }
   }
 
